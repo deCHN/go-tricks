@@ -2,6 +2,7 @@ package main
 
 import "testing"
 
+// https://talks.golang.org/2012/10things.slide#2
 var groupedConfig struct {
 	APIKey      string
 	OAuthConfig []byte
