@@ -1,14 +1,17 @@
-package main
+package main_test
 
 import "testing"
 
-type User struct {}
+type User struct{}
+
 func TestTemplateData(t *testing.T) {
 	data := struct {
 		Title string
-		Users []*{}User
+		Users []*User
 	}{
-		title,
-		users,
+		"chef",
+		[]*User{&User{}, &User{}},
 	}
+
+	_ = data
 }
