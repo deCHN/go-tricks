@@ -29,3 +29,19 @@ func TestArg(t *testing.T) {
 	fmt.Println("origin:", s)   //[2,3,4]
 	fmt.Println("returned:", r) //[2,3,4]
 }
+
+func TestCopy(t *testing.T) {
+
+	s := []int{1, 2, 3}
+
+	var t0 []int
+	copy(t0, s)
+
+	fmt.Println("Source:", s)
+	fmt.Println("Target:", t0)
+
+	t1 := make([]int, len(s))
+	copy(t1, s)
+	fmt.Println("Target:", t1)
+
+}
