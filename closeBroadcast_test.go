@@ -15,18 +15,18 @@ func waiter(i int, block, done chan struct{}) {
 	done <- struct{}{}
 }
 
-func waiterWithContext(i int, ctx context, done chan struct{}) {
-	time.Sleep(time.Duration(rand.Intn(3000)) * time.Millisecond)
-	fmt.Println(i, "waiting...")
-	select {
-	case context.Done():
-		done <- struct{}{}
-	default:
+//func waiterWithContext(i int, ctx context, done chan struct{}) {
+//time.Sleep(time.Duration(rand.Intn(3000)) * time.Millisecond)
+//fmt.Println(i, "waiting...")
+//select {
+//case context.Done():
+//done <- struct{}{}
+//default:
 
-	}
-	fmt.Println(i, "done!")
-	done <- struct{}{}
-}
+//}
+//fmt.Println(i, "done!")
+//done <- struct{}{}
+//}
 
 func TestWaiter(t *testing.T) {
 	block, done := make(chan struct{}), make(chan struct{})
